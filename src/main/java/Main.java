@@ -3,17 +3,17 @@ import java.util.Scanner;
 public class Main {
 
     static int counter(int number){ //function takes in individual odd/even number in the range
-        int count = number-1; //number of odd or even numbers in the range
         int result = 0;
 
-        for(int i=count; i>0; i--) {
-            result += (int) (Math.pow(2, count)) - 1;
+        for(int i=number; i>0; i--) { //loop through all the even or odd numbers less than the largest odd/even number
+            result += (int) (Math.pow(2, i)) - 1; //formula of 2 raised to power number minus 1
         }
         return result;
     }
 
     static int pictures(int E, int O){
-        return counter(E)+counter(O);
+        O-=1;//reduce the value of O by 1 since 0 is not considered in the even numbers.
+        return counter(E)+counter(O); // add values of the count of pictures of even and odd numbers.
     }
 
     public static void main(String args[]){
