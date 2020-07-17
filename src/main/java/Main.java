@@ -6,16 +6,14 @@ public class Main {
         int count = number-1; //number of odd or even numbers in the range
         int result = 0;
 
-        for(int i=count; i>1; i-=2) {
+        for(int i=count; i>0; i--) {
             result += (int) (Math.pow(2, count)) - 1;
         }
         return result;
     }
 
     static int pictures(int E, int O){
-        int largestEven = E*2;
-        int largestOdd = (O*2)-1;
-        return counter(largestEven)+counter(largestOdd);
+        return counter(E)+counter(O);
     }
 
     public static void main(String args[]){
